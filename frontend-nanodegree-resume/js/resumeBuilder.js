@@ -1,30 +1,57 @@
-var role = "Business Systems Analyst";
-var formattedName = HTMLheaderName.replace("%data%", "Matthew Wong");
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-
 var bio = {
 	"name" : "Matthew Wong ",
 	"role" : "Business Systems Analyst",
 	"contacts" : {
-		"mobile" : "XXX-XXX-XXXX",
-		"email" : "johndoe@example.com",
-		"github" : "johndoe",
-		"twitter" : "@johndoe",
-		"location" : "location",
+		"mobile" : "559-859-8796",
+		"email" : "wong.k.matthew@gmail.com",
+		"github" : "wongkmatthew",
+		"twitter" : "@wongkmatthew",
+		"location" : "Santa Clara",
 	},
-"welcomeMessage" : "weckdsljaflkjd ;salkf jdksa  fjdlksa ;fd",
+"welcomeMessage" : "Just a person who loves to learn!",
 	"skills" : [
-		"skills", "more skills", "skills etc."
+		"System Analysis", "MySQL", "System Design", "Agile", "Scrum",  "Front End Development"
 		],
 }
 
-var work = {};
-work.position = "Business Systems Analyst";
-work.employer = "Cisco Systems";
-work.years = 4;
+var work = {
+	"jobs" : [
+	{
+		"employer" : "Cisco Systems",
+		"title" : "Business Systems Analyst",
+		"dates" : "November 2014 - Present",
+		"experience" : "Bacon ipsum dolor amet short ribs ball tip beef ham hock biltong salami t-bone filet mignon ribeye alcatra. Prosciutto sirloin shoulder pork loin strip steak capicola salami turkey hamburger drumstick ball tip chuck brisket kevin picanha. Pork belly andouille leberkas, boudin shoulder short loin swine prosciutto sausage bresaola landjaeger beef meatloaf alcatra. Turducken pastrami ribeye, sirloin frankfurter t-bone boudin shankle capicola tongue. Cupim kielbasa tail shoulder flank rump. Swine tongue kielbasa, picanha fatback alcatra cow short ribs chicken tri-tip bresaola. Alcatra biltong rump landjaeger cow leberkas capicola porchetta ham hock, corned beef venison filet mignon.",
+	},
+	{
+		"employer" : "Cisco Systems",
+		"title" : "IT Anaylst",
+		"dates" : "July 2012 - November 2014",
+		"experience" : "Bacon ipsum dolor amet short ribs ball tip beef ham hock biltong salami t-bone filet mignon ribeye alcatra. Prosciutto sirloin shoulder pork loin strip steak capicola salami turkey hamburger drumstick ball tip chuck brisket kevin picanha. Pork belly andouille leberkas, boudin shoulder short loin swine prosciutto sausage bresaola landjaeger beef meatloaf alcatra. Turducken pastrami ribeye, sirloin frankfurter t-bone boudin shankle capicola tongue. Cupim kielbasa tail shoulder flank rump. Swine tongue kielbasa, picanha fatback alcatra cow short ribs chicken tri-tip bresaola. Alcatra biltong rump landjaeger cow leberkas capicola porchetta ham hock, corned beef venison filet mignon.",
+	},
+	{
+		"employer" : "Cisco Systems",
+		"title" : "IT Analyst Intern",
+		"dates" : "June 2011 - September 2011",
+		"experience" : "Bacon ipsum dolor amet short ribs ball tip beef ham hock biltong salami t-bone filet mignon ribeye alcatra. Prosciutto sirloin shoulder pork loin strip steak capicola salami turkey hamburger drumstick ball tip chuck brisket kevin picanha. Pork belly andouille leberkas, boudin shoulder short loin swine prosciutto sausage bresaola landjaeger beef meatloaf alcatra. Turducken pastrami ribeye, sirloin frankfurter t-bone boudin shankle capicola tongue. Cupim kielbasa tail shoulder flank rump. Swine tongue kielbasa, picanha fatback alcatra cow short ribs chicken tri-tip bresaola. Alcatra biltong rump landjaeger cow leberkas capicola porchetta ham hock, corned beef venison filet mignon.",
+	},
+	{
+		"employer" : "Santa Clara University",
+		"title" : "Student Assitant",
+		"dates" : "July 2010 - April 2011",
+		"experience" : "Bacon ipsum dolor amet short ribs ball tip beef ham hock biltong salami t-bone filet mignon ribeye alcatra. Prosciutto sirloin shoulder pork loin strip steak capicola salami turkey hamburger drumstick ball tip chuck brisket kevin picanha. Pork belly andouille leberkas, boudin shoulder short loin swine prosciutto sausage bresaola landjaeger beef meatloaf alcatra. Turducken pastrami ribeye, sirloin frankfurter t-bone boudin shankle capicola tongue. Cupim kielbasa tail shoulder flank rump. Swine tongue kielbasa, picanha fatback alcatra cow short ribs chicken tri-tip bresaola. Alcatra biltong rump landjaeger cow leberkas capicola porchetta ham hock, corned beef venison filet mignon.",
+	},
+	{
+		"employer" : "Town and Country Market",
+		"title" : "Assistant Store Manager",
+		"dates" : "July 2005 - August 2008",
+		"experience" : "Bacon ipsum dolor amet short ribs ball tip beef ham hock biltong salami t-bone filet mignon ribeye alcatra. Prosciutto sirloin shoulder pork loin strip steak capicola salami turkey hamburger drumstick ball tip chuck brisket kevin picanha. Pork belly andouille leberkas, boudin shoulder short loin swine prosciutto sausage bresaola landjaeger beef meatloaf alcatra. Turducken pastrami ribeye, sirloin frankfurter t-bone boudin shankle capicola tongue. Cupim kielbasa tail shoulder flank rump. Swine tongue kielbasa, picanha fatback alcatra cow short ribs chicken tri-tip bresaola. Alcatra biltong rump landjaeger cow leberkas capicola porchetta ham hock, corned beef venison filet mignon.",
+	},
+	],
+};
 
 var education = {};
 education["name"] = "Santa Clara University";
+education["major"] = "Operations Management and Information Systems";
 education["years"] = "2008 -2012";
 education["city"] = "Santa Clara, CA, US";
 
@@ -32,19 +59,16 @@ var projects = {};
 projects["Portfolio"] = "Portfolio";
 projects["Project X"] = "Project X";
 
+if(bio.skills.length > 0){
 
-$("#header").prepend(formattedName);
-$("#header").append(formattedRole);
-$("#main").append(bio.name);
-$("#main").append(bio.role);
-$("#main").append(bio.contacts);
-$("#main").append(bio.welcomeMessage);
-$("#main").append(bio.skills);
-$("#main").append(work["position"]);
-$("#main").append(education.name);
+	$("#header").append(HTMLheaderName);
+	$("#header").append(HTMLskillsStart);
 
-//var awesomeThoughts = "I am Matthew Wong and I am AWESOME";
-//var funThoughts = awesomeThoughts.replace("AWESOME","fun");
-//console.log(awesomeThoughts);
-//console.log(funThoughts);
-//console.log(formattedRole);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+	}
+
