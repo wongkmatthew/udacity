@@ -28,3 +28,11 @@ education["city"] = "Santa Clara, CA, US";
 var projects = {};
 projects["Portfolio"] = "Portfolio";
 projects["Project X"] = "Project X";
+
+/*
+for(var i>0, i=0, i--){
+	$("#workExperience").append(HTMLworkStart);
+
+	var variable = HTMLworkStart.replace("%data%", work.jobs[i]);
+}
+*/
