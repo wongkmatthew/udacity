@@ -19,11 +19,11 @@ var bio = {
 		"Scrum Master",  
 		"Front End Development"
 		],
-		"bioPic" : "images/pic.jpg"
+	"bioPic" : "images/pic.jpg"
 	}
 
 //Append Bio
-
+function bioDisplay(){
 	var formattedName = HTMLheaderName.replace("%data%",bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
     $("#header").prepend(formattedRole).prepend(formattedName);
@@ -48,6 +48,7 @@ var bio = {
     var formattedBioPic = HTMLbioPic.replace("%data%",bio.bioPic);
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedBioPic).append(formattedWelcomeMsg);
+}
 
 //Append Skills
 
@@ -112,7 +113,7 @@ var work = {
 
 //Append Work
 
-function workExperience(){
+function workDisplay(){
 for (job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 
@@ -153,21 +154,22 @@ var education = {
 
 //Append Education
 
+function educationDisplay(){
     for (var school in education.schools) {
-      if (education.schools.hasOwnProperty(school)) {
-        $('#education').append(HTMLschoolStart);
-        var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
-        var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+     	if (education.schools.hasOwnProperty(school)) {
+        	$('#education').append(HTMLschoolStart);
+        	var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+        	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        	var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        	var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 
         $('.education-entry:last').append(
             formattedName, formattedDates, formattedMajors);
            	$('.education-entry:last').prepend(
             formattedLocation);
-        }
-   }
-
+    	}
+   	}
+}
 //Project Object
 
 var projects = {
@@ -195,7 +197,7 @@ var projects = {
 
 //Append Projects
 
-projects.display = function(){
+function projectsDisplay(){
 	for (project in projects.projects){
 		$("#projects").append(HTMLprojectStart);
 
@@ -251,11 +253,12 @@ $(document).click(function(loc) {
 
 //Include Functions
 
-workExperience();
-projects.display();
+bioDisplay();
+workDisplay();
+projectsDisplay();
+educationDisplay();
 
 //Everything Else
 
 $("#main").append(internationalizeButton);	
 $("#mapDiv").append(googleMap);
-
