@@ -1,3 +1,4 @@
+'use strict';
 //Matthew Wong 4/18
 //Bio Object
 
@@ -20,11 +21,11 @@ var bio = {
 		"Scrum Master",  
 		"Front End Development"
 		],
-	"bioPic" : "images/pic.jpg"
+	"biopic" : "images/pic.jpg"
 	}
 
 //Append Bio
-function bioDisplay(){
+bio.display = function(){
 	var formattedName = HTMLheaderName.replace("%data%",bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
     $("#header").prepend(formattedRole).prepend(formattedName);
@@ -46,10 +47,9 @@ function bioDisplay(){
         .append(formattedTwitter)
         .append(formattedLocation);
 
-    var formattedBioPic = HTMLbioPic.replace("%data%",bio.bioPic);
+    var formattedbiopic = HTMLbioPic.replace("%data%",bio.biopic);
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedBioPic).append(formattedWelcomeMsg);
-}
+    $("#header").append(formattedbiopic).append(formattedWelcomeMsg);
 
 //Append Skills
 
@@ -69,7 +69,7 @@ if(bio.skills.length > 0){
 		formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
 	$("#skills").append(formattedSkill);
 	}
-
+}
 //Work Object
 
 var work = {
@@ -79,43 +79,43 @@ var work = {
 		"title" : "Business Systems Analyst",
 		"location" : "San Jose, California",
 		"dates" : "November 2014 - Present",
-		"experience" : "•	System Designer and Project Manager of the Proactive Asset Recovery Tool, responsible for aiding the return process of assets valued from $60M - $100M<br>•	Create Oracle ERP setup automation processes, consolidating a two person role into one<br>•	Maintain production, test, and development Oracle environment setups in the Order Management Module<br>•	Solution ERP upgrades to support new business capabilities in the current system environment, specific operating units include UK and Brazil<br>•	Manage Oracle BR100 documents for country enablement, reducing headcount expense by $200,000 per quarter<br>•	Collaborate with customer service business partners to enable service replenishment orders on new system for Brazil, resulting in cost savings of estimated $400,000<br>•	Mentoring two entry level college graduates and responsible for integrating them into Cisco’s culture and success<br>"
+		"description" : "•	System Designer and Project Manager of the Proactive Asset Recovery Tool, responsible for aiding the return process of assets valued from $60M - $100M<br>•	Create Oracle ERP setup automation processes, consolidating a two person role into one<br>•	Maintain production, test, and development Oracle environment setups in the Order Management Module<br>•	Solution ERP upgrades to support new business capabilities in the current system environment, specific operating units include UK and Brazil<br>•	Manage Oracle BR100 documents for country enablement, reducing headcount expense by $200,000 per quarter<br>•	Collaborate with customer service business partners to enable service replenishment orders on new system for Brazil, resulting in cost savings of estimated $400,000<br>•	Mentoring two entry level college graduates and responsible for integrating them into Cisco’s culture and success<br>"
 	},
 	{
 		"employer" : "Cisco Systems",
 		"location" : "San Jose, California",
 		"title" : "IT Anaylst",
 		"dates" : "July 2012 - November 2014",
-		"experience" : "•	Interacted with business partners to support business operations leading to increased productivity.  Analysis resulted in enhancements to ERP system and an increase in overall user experience<br>•	Delivered technical solutions to business partners based on business requirements and specifications<br>•	Analyzed and resolved system defects to maintain production normalization and prevent downtime<br>•	Managed Oracle ERP test environments to keep testing instances as close to production as possible<br>•	Mentored college graduate assigned to team and helped individual succeed by accelerating ramp up period<br>"
+		"description" : "•	Interacted with business partners to support business operations leading to increased productivity.  Analysis resulted in enhancements to ERP system and an increase in overall user experience<br>•	Delivered technical solutions to business partners based on business requirements and specifications<br>•	Analyzed and resolved system defects to maintain production normalization and prevent downtime<br>•	Managed Oracle ERP test environments to keep testing instances as close to production as possible<br>•	Mentored college graduate assigned to team and helped individual succeed by accelerating ramp up period<br>"
 	},
 	{
 		"employer" : "Cisco Systems",
 		"title" : "IT Analyst Intern",
 		"location" : "San Jose, California",
 		"dates" : "June 2011 - September 2011",
-		"experience" : "•	Reduced Cisco expense by maintaining and decommissioning SAP accounts equaling $120,000 in savings<br>•	Delivered key organizational highlights and accomplishments via newsletter to a 40+ person organization<br>•	Developed an internal website page for supply chain organization that increased productivity<br>•	Winner of Intern Global Connection Video Competition<br>"
+		"description" : "•	Reduced Cisco expense by maintaining and decommissioning SAP accounts equaling $120,000 in savings<br>•	Delivered key organizational highlights and accomplishments via newsletter to a 40+ person organization<br>•	Developed an internal website page for supply chain organization that increased productivity<br>•	Winner of Intern Global Connection Video Competition<br>"
 	},
 	{
 		"employer" : "Santa Clara University",
 		"title" : "Student Assitant",
 		"location" : "Santa Clara, California",
 		"dates" : "July 2010 - April 2011",
-		"experience" : "•	Maintained data in facility’s asset database responsible for tracking expenses<br>•	Assisted the Technical Specialist in tasks such as new application integration and employee adoption<br>•	Learned basic fundamentals of AutoCad and database management<br>"
+		"description" : "•	Maintained data in facility’s asset database responsible for tracking expenses<br>•	Assisted the Technical Specialist in tasks such as new application integration and employee adoption<br>•	Learned basic fundamentals of AutoCad and database management<br>"
 	},
 	{
 		"employer" : "Town and Country Market",
 		"title" : "Assistant Store Manager",
 		"location" : "Porterville, California",
 		"dates" : "July 2005 - August 2008",
-		"experience" : "•	Learned and experienced the trade on how to run a personal family business<br>•	Developed an understanding of the benefits of good business practices<br>•	Interacted with clientele and provide excellent customer service<br>"
+		"description" : "•	Learned and experienced the trade on how to run a personal family business<br>•	Developed an understanding of the benefits of good business practices<br>•	Interacted with clientele and provide excellent customer service<br>"
 	},
 	],
 }
 
 //Append Work
 
-function workDisplay(){
-for (job in work.jobs){
+work.display = function(){
+for (var job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -126,8 +126,8 @@ for (job in work.jobs){
 	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 	$(".work-entry:last").append(formattedDates);
 	
-	var formattedExperience = HTMLworkDescription.replace("%data%", work.jobs[job].experience);
-	$(".work-entry:last").append(formattedExperience);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	$(".work-entry:last").append(formattedDescription);
 
 	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 	$(".work-entry:last").prepend(formattedLocation);
@@ -140,29 +140,38 @@ var education = {
     "schools" : [{
         "name" : "Santa Clara Univeristy",
         "location" : "Santa Clara, California",
-        "major" : "Operations Management and Information Systems",
-        "dates" : "2008 - 2012"
-    },
-    {
-    	"name" : "Udacity",
-    	"location" : "Santa Clara",
-    	"major" : "Front End Developer Nano Degree",
-    	"dates" : "January 2016 - Present"
+        "majors" : [
+        	"Operations Management and Information Systems",
+        		],
+        "dates" : "2008 - 2012",
+        "url" : "www.scu.edu"
     },
     ],
-   
+    	"onlineCourses" : [{  
+      	"title" : "Frontend Developer Nano Degree",
+      	"school" : "Udacity",
+      	"date" : "January 2016 - Present",
+      	"url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+        },
+        {  
+      	"title" : "How to Use Git and GitHub",
+      	"school" : "Udacity",
+      	"date" : "January 2016",
+      	"url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+        },
+        ],  
 }
 
 //Append Education
 
-function educationDisplay(){
+education.display = function(){
     for (var school in education.schools) {
      	if (education.schools.hasOwnProperty(school)) {
         	$('#education').append(HTMLschoolStart);
         	var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
         	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
         	var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        	var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        	var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 
         $('.education-entry:last').append(
             formattedName, formattedDates, formattedMajors);
@@ -170,6 +179,20 @@ function educationDisplay(){
             formattedLocation);
     	}
    	}
+   	$("#education").append(HTMLonlineClasses);
+   	for (var onlineCourse in education.onlineCourses) {
+   			if (education.schools.hasOwnProperty(school)) {
+   			$("#education").append(HTMLschoolStart);
+			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date);
+			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
+			var schoolTitle = formattedTitle + formattedSchool;
+ 	
+			$(".education-entry:last").append(schoolTitle, formattedDates, formattedURL);
+	
+		}
+	}
 }
 //Project Object
 
@@ -198,8 +221,8 @@ var projects = {
 
 //Append Projects
 
-function projectsDisplay(){
-	for (project in projects.projects){
+projects.display = function(){
+	for (var project in projects.projects){
 		$("#projects").append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -212,7 +235,7 @@ function projectsDisplay(){
 		$(".project-entry:last").append(formattedDescription);
 
 		if (projects.projects[project].images.length>0){
-			for (image in projects.projects[project].images){
+			for (var image in projects.projects[project].images){
 				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
 				$(".project-entry:last").append(formattedImage);
 			}
@@ -254,10 +277,10 @@ $(document).click(function(loc) {
 
 //Include Functions
 
-bioDisplay();
-workDisplay();
-projectsDisplay();
-educationDisplay();
+bio.display();
+work.display();
+projects.display();
+education.display();
 
 //Everything Else
 
