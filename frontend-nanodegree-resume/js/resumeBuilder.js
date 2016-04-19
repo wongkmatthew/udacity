@@ -22,7 +22,7 @@ var bio = {
 		"Front End Development"
 		],
 	"biopic" : "images/pic.jpg"
-	}
+	};
 
 //Append Bio
 bio.display = function(){
@@ -69,7 +69,7 @@ if(bio.skills.length > 0){
 		formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
 	$("#skills").append(formattedSkill);
 	}
-}
+};
 //Work Object
 
 var work = {
@@ -110,7 +110,7 @@ var work = {
 		"description" : "•	Learned and experienced the trade on how to run a personal family business<br>•	Developed an understanding of the benefits of good business practices<br>•	Interacted with clientele and provide excellent customer service<br>"
 	},
 	],
-}
+};
 
 //Append Work
 
@@ -132,7 +132,7 @@ for (var job in work.jobs){
 	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 	$(".work-entry:last").prepend(formattedLocation);
 }
-}
+};
 
 //Education Object
 
@@ -160,7 +160,7 @@ var education = {
       	"url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
         },
         ],  
-}
+};
 
 //Append Education
 
@@ -193,7 +193,7 @@ education.display = function(){
 	
 		}
 	}
-}
+};
 //Project Object
 
 var projects = {
@@ -231,7 +231,7 @@ projects.display = function(){
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 		$(".project-entry:last").append(formattedDates);
 
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description)
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		$(".project-entry:last").append(formattedDescription);
 
 		if (projects.projects[project].images.length>0){
@@ -241,7 +241,7 @@ projects.display = function(){
 			}
 		}
 	}
-}
+};
 
 
 //Fuction Code
@@ -249,7 +249,7 @@ projects.display = function(){
 function locationizer(work_obj) {
 	var locationArray = [];
 
-	for(job in work_obj.jobs){
+	for(var job in work_obj.jobs){
 		var newLocation = work_obj.jobs[job].location;
 		locationArray.push(newLocation);
 	}
